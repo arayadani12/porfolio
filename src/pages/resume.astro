@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// TODO: replace every section with real content.
+
+const education = [
+  {
+    title: 'MSc in Mathematical Engineering',
+    org: 'Universitat Politècnica de Catalunya (UPC)',
+    period: '20XX — 20XX',
+    notes: 'Numerical methods for PDEs, computational mechanics, optimization.',
+  },
+  {
+    title: 'BSc in Mathematics',
+    org: 'Universitat Politècnica de Catalunya (UPC)',
+    period: '20XX — 20XX',
+    notes: 'Analysis, algebra, numerical analysis, scientific computing.',
+  },
+];
+
+const experience = [
+  {
+    title: 'Simulation Engineer',
+    org: '[Company]',
+    period: '20XX — present',
+    bullets: [
+      'Developed FE-based multiphysics models for industrial clients.',
+      'Implemented custom material models and coupling schemes (C++ / Python).',
+      'Built data pipelines for post-processing simulation outputs at scale.',
+    ],
+  },
+  {
+    title: 'Research Assistant',
+    org: '[University / Lab]',
+    period: '20XX — 20XX',
+    bullets: [
+      'Worked on adaptive mesh refinement for elliptic problems.',
+      'Co-authored a paper on a posteriori error estimators.',
+    ],
+  },
+];
+
+const skills = [
+  { group: 'Numerical methods', items: ['FEM', 'FVM', 'AMR', 'Phase-field', 'Topology optimization'] },
+  { group: 'Languages',         items: ['Python', 'C++', 'TypeScript', 'MATLAB'] },
+  { group: 'Frameworks',        items: ['FEniCS / DOLFINx', 'deal.II', 'PyTorch', 'NumPy / SciPy'] },
+  { group: 'Tooling',           items: ['Linux', 'Docker', 'Git', 'CMake', 'MPI'] },
+];
+
+const publications = [
+  {
+    title: '[Placeholder] An adaptive phase-field model for brittle fracture in RCCP slabs',
+    venue: 'Journal of Computational Mechanics (forthcoming)',
+    year: '20XX',
+  },
+  {
+    title: '[Placeholder] Computational homogenization of fiber composites with periodic BCs',
+    venue: 'International Journal for Numerical Methods in Engineering',
+    year: '20XX',
+  },
+];
+---
+
+<Layout title="Resume — Daniel Araya">
+  <article class="container-prose">
+    <p class="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-accent">Resume</p>
+    <h1 class="text-3xl font-semibold sm:text-4xl">Daniel Araya</h1>
+    <p class="mt-2 text-text/70">
+      Mathematician · Simulation Engineer · daniel.araya@email.com
+    </p>
+
+    <!-- Education -->
+    <section class="mt-12">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Education</h2>
+      <ul class="mt-4 space-y-5">
+        {education.map((e) => (
+          <li class="border-l-2 border-white/10 pl-4">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <span class="font-medium text-text">{e.title}</span>
+              <span class="font-mono text-xs text-muted">{e.period}</span>
+            </div>
+            <div class="text-sm text-text/80">{e.org}</div>
+            <div class="mt-1 text-sm text-text/60">{e.notes}</div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Experience -->
+    <section class="mt-12">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Experience</h2>
+      <ul class="mt-4 space-y-6">
+        {experience.map((x) => (
+          <li class="border-l-2 border-white/10 pl-4">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <span class="font-medium text-text">{x.title}</span>
+              <span class="font-mono text-xs text-muted">{x.period}</span>
+            </div>
+            <div class="text-sm text-text/80">{x.org}</div>
+            <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-text/70">
+              {x.bullets.map((b) => <li>{b}</li>)}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="mt-12">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Skills</h2>
+      <dl class="mt-4 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+        {skills.map((s) => (
+          <div>
+            <dt class="font-mono text-xs uppercase tracking-wider text-muted">{s.group}</dt>
+            <dd class="mt-2 flex flex-wrap gap-2">
+              {s.items.map((it) => <span class="tag">{it}</span>)}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <!-- Publications -->
+    <section class="mt-12">
+      <h2 class="font-mono text-xs uppercase tracking-[0.25em] text-accent">Publications</h2>
+      <ul class="mt-4 space-y-4">
+        {publications.map((p) => (
+          <li class="border-l-2 border-white/10 pl-4">
+            <div class="text-text">{p.title}</div>
+            <div class="mt-1 text-sm text-text/60">
+              <span>{p.venue}</span>
+              <span class="mx-2 text-muted">·</span>
+              <span class="font-mono">{p.year}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    {/* TODO: when ready, add a PDF download button that links to /resume.pdf in /public. */}
+  </article>
+</Layout>

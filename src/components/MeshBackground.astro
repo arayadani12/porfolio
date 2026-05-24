@@ -1,0 +1,18 @@
+---
+// Mounts the Three.js adaptive mesh background as a fixed, behind-content canvas.
+// The implementation lives in src/scripts/meshBackground.ts.
+---
+
+<canvas
+  id="mesh-bg-canvas"
+  class="pointer-events-none fixed inset-0 -z-10 h-screen w-screen"
+></canvas>
+
+<script>
+  import { initMeshBackground } from '../scripts/meshBackground';
+
+  const canvas = document.getElementById('mesh-bg-canvas') as HTMLCanvasElement | null;
+  if (canvas) {
+    initMeshBackground(canvas);
+  }
+</script>

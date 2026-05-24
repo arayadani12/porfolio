@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// TODO: replace with real email + profile URLs.
+const email = 'daniel.araya@email.com';
+const linkedin = 'https://www.linkedin.com/in/your-handle';
+const github = 'https://github.com/your-handle';
+---
+
+<Layout title="Contact — Daniel Araya">
+  <section class="container-prose">
+    <p class="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-accent">Contact</p>
+    <h1 class="text-3xl font-semibold sm:text-4xl">Get in touch</h1>
+    <p class="mt-4 text-text/75">
+      Happy to chat about simulations, collaborations, or interesting
+      mathematical problems. Email is the fastest way to reach me.
+    </p>
+
+    <ul class="mt-10 space-y-4">
+      <li class="flex items-center justify-between gap-4 rounded-lg border border-white/10 bg-surface px-5 py-4">
+        <div>
+          <div class="font-mono text-xs uppercase tracking-wider text-muted">Email</div>
+          <a href={`mailto:${email}`} class="mt-1 block text-text hover:text-accent">{email}</a>
+        </div>
+        <a
+          href={`mailto:${email}`}
+          class="rounded-md border border-accent/40 bg-accent/10 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-accent hover:bg-accent/20"
+        >
+          Send →
+        </a>
+      </li>
+
+      <li class="flex items-center justify-between gap-4 rounded-lg border border-white/10 bg-surface px-5 py-4">
+        <div>
+          <div class="font-mono text-xs uppercase tracking-wider text-muted">LinkedIn</div>
+          <a href={linkedin} target="_blank" rel="noopener noreferrer" class="mt-1 block text-text hover:text-accent">
+            {linkedin.replace(/^https?:\/\//, '')}
+          </a>
+        </div>
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md border border-white/10 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-text/80 hover:border-accent/50 hover:text-accent"
+        >
+          Open ↗
+        </a>
+      </li>
+
+      <li class="flex items-center justify-between gap-4 rounded-lg border border-white/10 bg-surface px-5 py-4">
+        <div>
+          <div class="font-mono text-xs uppercase tracking-wider text-muted">GitHub</div>
+          <a href={github} target="_blank" rel="noopener noreferrer" class="mt-1 block text-text hover:text-accent">
+            {github.replace(/^https?:\/\//, '')}
+          </a>
+        </div>
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-md border border-white/10 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-text/80 hover:border-accent/50 hover:text-accent"
+        >
+          Open ↗
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { projects } from '../../data/projects';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Projects & Simulations — Daniel Araya">
+  <section class="container-wide">
+    <p class="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-accent">
+      Projects & Simulations
+    </p>
+    <h1 class="text-3xl font-semibold sm:text-4xl">Selected work</h1>
+    <p class="mt-3 max-w-2xl text-text/70">
+      A few projects across topology optimization, computational homogenization
+      and phase-field damage. Each one has an interactive page with notes and
+      simulation data.
+    </p>
+
+    <ul class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map((p) => (
+        <li>
+          <a href={`${base}/projects/${p.slug}`} class="card block h-full">
+            <div class="flex items-start justify-between gap-3">
+              <h2 class="text-lg font-semibold text-text">{p.title}</h2>
+            </div>
+            <p class="mt-3 text-sm text-text/70">{p.shortDescription}</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="tag">{p.tag}</span>
+              <span class="font-mono text-xs text-muted">read →</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Layout>

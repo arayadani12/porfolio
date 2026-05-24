@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MeshBackground from '../components/MeshBackground.astro';
+---
+
+<Layout fullBleed>
+  <MeshBackground />
+
+  <section class="relative flex min-h-[calc(100vh-3.5rem)] items-center">
+    <div class="container-wide grid grid-cols-1 items-center gap-10 md:grid-cols-[auto,1fr]">
+      <!-- TODO: replace with real profile photo (place file in /public/photo.jpg). -->
+      <div
+        class="flex h-40 w-40 items-center justify-center rounded-full border border-accent/40 bg-surface/70 backdrop-blur-md sm:h-48 sm:w-48"
+        aria-label="Profile photo placeholder"
+      >
+        <span class="font-mono text-3xl text-accent">DA</span>
+      </div>
+
+      <div class="rounded-2xl bg-bg/30 p-2 backdrop-blur-sm">
+        <p class="mb-3 font-mono text-xs uppercase tracking-[0.25em] text-accent">
+          Portfolio
+        </p>
+        <h1 class="text-4xl font-semibold leading-tight tracking-tight text-text sm:text-5xl md:text-6xl">
+          Hi, I'm <span class="text-accent">Daniel Araya</span>
+        </h1>
+        <p class="mt-5 max-w-2xl text-base text-text/80 sm:text-lg">
+          Mathematician and Simulation Engineer specialized in multiphysics
+          modeling, numerical methods and data-driven models.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href={`${import.meta.env.BASE_URL}/projects`}
+            class="rounded-md bg-accent px-4 py-2 font-mono text-sm text-bg transition-colors hover:bg-accent/80"
+          >
+            View projects →
+          </a>
+          <a
+            href={`${import.meta.env.BASE_URL}/about`}
+            class="rounded-md border border-white/10 px-4 py-2 font-mono text-sm text-text/80 transition-colors hover:border-accent/50 hover:text-accent"
+          >
+            About me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

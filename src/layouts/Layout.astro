@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** If true, the page reserves no top spacing — useful for full-bleed hero with mesh background. */
+  fullBleed?: boolean;
+}
+
+const {
+  title = 'Daniel Araya — Mathematician & Simulation Engineer',
+  description = 'Portfolio of Daniel Araya — multiphysics modeling, numerical methods and data-driven models.',
+  fullBleed = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="bg-bg">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen text-text">
+    <Nav />
+    <main class={fullBleed ? '' : 'py-12'}>
+      <slot />
+    </main>
+    <footer class="border-t border-white/5 py-8">
+      <div class="container-wide flex flex-col items-start justify-between gap-2 font-mono text-xs text-muted sm:flex-row">
+        <span>© {new Date().getFullYear()} Daniel Araya</span>
+        <span>Built with Astro · React · Three.js · Plotly.js</span>
+      </div>
+    </footer>
+  </body>
+</html>
