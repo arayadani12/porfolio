@@ -1,0 +1,22 @@
+11:37:24 [ERROR] [vite] Error: [31m  Failed to scan for dependencies from entries:
+  C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/components/MeshBackground.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/components/Nav.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/layouts/Layout.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/pages/about.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/pages/contact.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/pages/index.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/pages/resume.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/pages/projects/index.astro
+C:/Users/DanielAraya/Desktop/Daniel/porfolio/src/pages/projects/[slug].astro
+
+  [39mspawn EPERM
+    at ChildProcess.spawn (node:internal/child_process:420:11)
+    at Object.spawn (node:child_process:786:9)
+    at ensureServiceIsRunning (C:\Users\DanielAraya\Desktop\Daniel\porfolio\node_modules\esbuild\lib\main.js:1975:29)
+    at Object.context (C:\Users\DanielAraya\Desktop\Daniel\porfolio\node_modules\esbuild\lib\main.js:1874:33)
+    at prepareEsbuildScanner (file:///C:/Users/DanielAraya/Desktop/Daniel/porfolio/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49576:24)
+    at async file:///C:/Users/DanielAraya/Desktop/Daniel/porfolio/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:50174:26
+12:35:58 [ERROR] Failed to load url @astrojs/react/server.js (resolved id: @astrojs/react/server.js). Does the file exist?
+  Stack trace:
+    at C:\Users\DanielAraya\Desktop\Daniel\porfolio\node_modules\vite\dist\node\chunks\dep-BK3b2jBa.js:51969:17
+    [...] See full stack trace in the browser, or rerun with --verbose.

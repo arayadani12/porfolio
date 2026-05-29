@@ -51,3 +51,44 @@
     @apply rounded-xl border border-white/5 bg-surface p-6 transition-colors hover:border-accent/40;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-group(nav-left-links),
+  ::view-transition-group(nav-right-links),
+  ::view-transition-group(nav-home-link) {
+    animation-duration: 520ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::view-transition-old(nav-home-link) {
+    animation: nav-home-link-out 220ms ease both;
+  }
+
+  ::view-transition-new(nav-home-link) {
+    animation: nav-home-link-in 340ms 80ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes nav-home-link-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nav-home-link-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
+  }
+}

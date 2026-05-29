@@ -1,0 +1,29 @@
+
+> porfolio@0.1.0 dev
+> astro dev --host 127.0.0.1
+
+11:37:24 [types] Generated 2ms
+11:37:24 [vite] Re-optimizing dependencies because vite config has changed
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36m@astrojs/react/client.js[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact/jsx-runtime[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact/jsx-dev-runtime[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact-dom[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36m@astrojs/react/client.js[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact-dom[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact/jsx-dev-runtime[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mreact/jsx-runtime[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mastro > cssesc[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mastro > aria-query[39m, present in 'optimizeDeps.include'
+11:37:24 [WARN] [vite] Failed to resolve dependency: [36mastro > axobject-query[39m, present in 'optimizeDeps.include'
+
+ astro  v4.16.19 ready in 737 ms
+
+┃ Local    http://127.0.0.1:4321/porfolio
+
+11:37:24 watching for file changes...
+
+ update  ▶ New version of Astro available: 6.4.2
+  Run npx @astrojs/upgrade to update
+
