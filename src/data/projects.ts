@@ -25,7 +25,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: 'topological-optimization',
-    title: 'Topological Optimization of Lightweight Structures',
+    title: 'Topological Optimization of Elastic Structures',
     shortDescription:
       'Density-based topology optimization (SIMP) for stiffness-maximizing structures under volume constraints.',
     tag: 'Optimization',

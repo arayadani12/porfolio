@@ -9,10 +9,27 @@
 ></canvas>
 
 <script>
+  // With Astro's <ViewTransitions />, module scripts execute only once per
+  // session. The home-page canvas is destroyed on navigation away and a fresh
+  // one is created on return, so we must (re-)initialize on every page load
+  // and dispose the WebGL context before the swap.
   import { initMeshBackground } from '../scripts/meshBackground';
 
-  const canvas = document.getElementById('mesh-bg-canvas') as HTMLCanvasElement | null;
-  if (canvas) {
-    initMeshBackground(canvas);
-  }
+  let cleanup: (() => void) | null = null;
+
+  const mount = () => {
+    const canvas = document.getElementById('mesh-bg-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+    cleanup?.();
+    cleanup = initMeshBackground(canvas);
+  };
+
+  const unmount = () => {
+    cleanup?.();
+    cleanup = null;
+  };
+
+  mount();
+  document.addEventListener('astro:page-load', mount);
+  document.addEventListener('astro:before-swap', unmount);
 </script>
